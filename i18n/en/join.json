@@ -1,0 +1,27 @@
+{
+  "join": {
+    "join": "Join",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "clickHereToSignIn": "Click here to sign in",
+    "orContinueWith": "Or continue with",
+    "validationErrorMessages": {
+      "email": {
+        "required": "Please enter your email address",
+        "pattern": "Should be a valid email address"
+      },
+      "firstName": {
+        "required": "Please enter your first name"
+      },
+      "lastName": {
+        "required": "Please enter your last name"
+      },
+      "password": {
+        "required": "Please enter your password",
+        "minLength": "Password should be at least 6 characters long"
+      }
+    }
+  }
+}

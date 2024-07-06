@@ -1,0 +1,19 @@
+{
+  "signIn": {
+    "signIn": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "clickHereToJoin": "Click here to join",
+    "orContinueWith": "Or continue with",
+    "validationErrorMessages": {
+      "email": {
+        "required": "Please enter your email address",
+        "pattern": "Should be a valid email address"
+      },
+      "password": {
+        "required": "Please enter your password",
+        "minLength": "Password should be at least 6 characters long"
+      }
+    }
+  }
+}
