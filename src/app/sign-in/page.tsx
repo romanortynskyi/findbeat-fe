@@ -1,7 +1,12 @@
 'use client'
 
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { FieldValues } from 'react-hook-form'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import Box from '@mui/material/Box'
+
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
@@ -9,10 +14,28 @@ import SignInForm from '@/components/forms/sign-in-form'
 import Header from '@/components/header'
 
 import styles from './styles'
-import { useTranslations } from 'next-intl'
 
 const SignIn = () => {
+  const router = useRouter()
   const t = useTranslations('signIn')
+
+  const onSubmit = async (values: FieldValues) => {
+    const { email, password } = values
+    
+    try {
+      await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
+      })
+
+      router.replace('/')
+    }
+
+    catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Box sx={styles.container}>
@@ -38,7 +61,7 @@ const SignIn = () => {
           {t('signIn')}
         </Typography>
 
-        <SignInForm onSubmit={(data) => console.log(data)} />
+        <SignInForm onSubmit={onSubmit} />
       </Box>
     </Box>
   )

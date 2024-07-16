@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, FormEventHandler, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
@@ -36,6 +36,12 @@ const SignInForm: FC<SignInFormProps> = (props) => {
     setIsPasswordHidden((prev) => !prev)
   }
 
+  const onFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault()
+    
+    handleSubmit(onSubmit)()
+  }
+
   const passwordInputEndAdornment = (
     <IconButton 
       sx={styles.passwordInputEndAdornmentButton}
@@ -51,7 +57,7 @@ const SignInForm: FC<SignInFormProps> = (props) => {
   })
   
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={onFormSubmit}>
       <Box sx={styles.innerContainer}>
         <Box sx={styles.inputContainer}>
           <AppFormTextField

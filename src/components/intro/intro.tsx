@@ -16,6 +16,7 @@ const Intro = () => {
       </Container>
       
       <IntroContent />
+      
       <Box sx={{ backgroundColor: 'red', height: '100vh' }}>
 
       </Box>

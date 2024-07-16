@@ -101,7 +101,7 @@ const SignInForm: FC<SignInFormProps> = (props) => {
         <Box sx={styles.joinLinkContainer}>
           <Link
             style={{ color: '#FBFBFB', textDecoration: 'underline' }}
-            href='/signIn'
+            href='/sign-in'
           >
             {t('clickHereToSignIn')}
           </Link>

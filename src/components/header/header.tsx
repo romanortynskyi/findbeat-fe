@@ -11,7 +11,7 @@ const Header: FC<HeaderProps> = (props) => {
   const { shouldHaveSignInLink = true } = props
 
   const signInLink = shouldHaveSignInLink ? (
-    <Link href='/signIn'>
+    <Link href='/sign-in'>
       <PrimaryButton text='Sign in' onClick={() => {}} />
     </Link>
   ) : null
