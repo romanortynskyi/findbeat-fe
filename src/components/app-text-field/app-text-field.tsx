@@ -17,10 +17,11 @@ const AppTextField: FC<AppTextFieldProps> = (props) => {
     type,
     endAdornment,
     errorMessage,
+    hasError = false,
   } = props
 
   const styles = useStyles({
-    hasError: errorMessage !== undefined,
+    hasError,
   })
 
   const errorMessageTypography = (
@@ -44,7 +45,7 @@ const AppTextField: FC<AppTextFieldProps> = (props) => {
         type={type}
         endAdornment={endAdornment}
         sx={styles.inputBase}
-        error={errorMessage !== undefined}
+        error={hasError}
       />
       {errorMessageTypography}
     </>

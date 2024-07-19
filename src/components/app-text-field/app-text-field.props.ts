@@ -13,6 +13,7 @@ interface AppTextFieldProps {
   placeholder?: string
   type?: string
   endAdornment?: ReactNode
+  hasError?: boolean
   errorMessage?: string
   onBlur?: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
 }

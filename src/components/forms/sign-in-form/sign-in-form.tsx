@@ -1,4 +1,9 @@
-import { FC, FormEventHandler, useState } from 'react'
+import {
+  FC,
+  FormEventHandler,
+  useState,
+  useEffect,
+} from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
@@ -20,13 +25,22 @@ import SignInFormProps from './types/interfaces/sign-in-form.props'
 import styles from './sign-in-form.styles'
 
 const SignInForm: FC<SignInFormProps> = (props) => {
-  const { onSubmit } = props
+  const { onSubmit, serverErrorMessage } = props
 
   const [isPasswordHidden, setIsPasswordHidden] = useState(true)
 
   const t = useTranslations('signIn')
 
-  const { handleSubmit, control } = useForm()
+  const { handleSubmit, control, setError, getFieldState } = useForm()
+
+  useEffect(() => {
+    if (serverErrorMessage) {
+      setError('password', {
+        type: 'server',
+        message: serverErrorMessage,
+      })
+    }
+  }, [serverErrorMessage])
 
   const passwordInputType = isPasswordHidden ? TextFieldType.Password : TextFieldType.Text
 

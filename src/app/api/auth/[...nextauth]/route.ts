@@ -31,7 +31,10 @@ export const authOptions = {
         password: {},
       },
       authorize: async (credentials) => {
-        const response = await axios.post<User>('http://localhost:3000/auth/sign-in', {
+        const baseApiUrl = process.env.API_URL
+        const signInUrl = `${baseApiUrl}/auth/sign-in`
+
+        const response = await axios.post<User>(signInUrl, {
           email: credentials?.email,
           password: credentials?.password,
         })

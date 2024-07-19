@@ -30,7 +30,17 @@ const AppFormTextField: FC<AppFormTextFieldProps> = (props) => {
       ref,
     } = field
 
-    const errorMessage = availableValidationErrors[fieldState.error?.type] || undefined
+    const isServerError = fieldState.error?.type === 'server'
+
+    const getErrorMessage = () => {
+      if (isServerError) {
+        return availableValidationErrors[fieldState.error?.message]
+      }
+
+      return availableValidationErrors[fieldState.error?.type] || undefined
+    }
+
+    const hasError = !isServerError && getErrorMessage() !== undefined
 
     return (
       <AppTextField
@@ -40,7 +50,8 @@ const AppFormTextField: FC<AppFormTextFieldProps> = (props) => {
         placeholder={placeholder}
         type={type}
         endAdornment={endAdornment}
-        errorMessage={errorMessage}
+        hasError={hasError}
+        errorMessage={getErrorMessage()}
         onChange={onChange}
         onBlur={onBlur}
       />

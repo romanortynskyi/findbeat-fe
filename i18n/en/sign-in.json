@@ -12,7 +12,8 @@
       },
       "password": {
         "required": "Please enter your password",
-        "minLength": "Password should be at least 6 characters long"
+        "minLength": "Password should be at least 6 characters long",
+        "WRONG_EMAIL_OR_PASSWORD": "Email or password is incorrect"
       }
     }
   }
