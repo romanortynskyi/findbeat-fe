@@ -1,13 +1,11 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import Box from '@mui/material/Box'
 
-import Logo from '../logo'
 import PrimaryButton from '../primary-button'
+import GuestHeaderProps from './types/interfaces/guest-header.props'
+import GenericHeader from '../generic-header'
 
-import styles from './header.styles'
-
-const Header: FC<HeaderProps> = (props) => {
+const GuestHeader: FC<GuestHeaderProps> = (props) => {
   const { shouldHaveSignInLink = true } = props
 
   const signInLink = shouldHaveSignInLink ? (
@@ -17,15 +15,9 @@ const Header: FC<HeaderProps> = (props) => {
   ) : null
 
   return (
-    <Box sx={styles.container}>
-      <Link
-        style={{ color: '#FBFBFB', textDecoration: 'none' }}
-        href='/'
-      >
-        <Logo />
-      </Link>
+    <GenericHeader>
       {signInLink}
-    </Box>
+    </GenericHeader>
   )
 }
-export default Header
+export default GuestHeader

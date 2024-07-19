@@ -7,7 +7,7 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
 import JoinForm from '@/components/forms/join-form'
-import Header from '@/components/header'
+import Header from '@/components/guest-header'
 
 import styles from './styles'
 

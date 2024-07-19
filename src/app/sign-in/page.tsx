@@ -11,7 +11,7 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
 import SignInForm from '@/components/forms/sign-in-form'
-import Header from '@/components/header'
+import Header from '@/components/guest-header'
 import ServerErrorCode from '@/types/enums/server-error-code.enum'
 
 import styles from './styles'

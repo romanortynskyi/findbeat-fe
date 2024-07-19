@@ -1,3 +1,0 @@
-interface HeaderProps {
-  shouldHaveSignInLink?: boolean
-}

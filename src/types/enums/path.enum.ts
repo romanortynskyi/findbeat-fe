@@ -1,6 +1,6 @@
 enum Path {
   Index = '/',
-  Login = '/login',
+  SignIn = '/sign-in',
   SignUp = '/signup',
 }
 
