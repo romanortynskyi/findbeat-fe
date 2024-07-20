@@ -19,7 +19,7 @@ const AppAvatar: FC<AppAvatarProps> = (props) => {
         src,
         isClickable,
       })}
-      src={src ?? '/default-user-image.png'}
+      src={src ?? '/user-fallback-image.png'}
     />
   )
 }

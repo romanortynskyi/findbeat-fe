@@ -16,6 +16,15 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    cursor: 'pointer',
+  },
+  autocompleteStartAdornmentIcon: {
+    mr: 1,
+    cursor: 'pointer',
+  },
+  autocompleteEndAdornmentIcon: {
+    mr: 1,
+    cursor: 'pointer',
   },
 }
 

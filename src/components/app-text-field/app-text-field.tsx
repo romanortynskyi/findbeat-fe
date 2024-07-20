@@ -15,6 +15,7 @@ const AppTextField: FC<AppTextFieldProps> = (props) => {
     ref,
     placeholder,
     type,
+    startAdornment,
     endAdornment,
     errorMessage,
     inputProps,
@@ -45,6 +46,7 @@ const AppTextField: FC<AppTextFieldProps> = (props) => {
         ref={ref}
         placeholder={placeholder}
         type={type}
+        startAdornment={startAdornment}
         endAdornment={endAdornment}
         sx={styles.inputBase}
         error={hasError}

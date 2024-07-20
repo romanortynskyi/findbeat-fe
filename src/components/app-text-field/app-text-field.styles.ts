@@ -8,19 +8,18 @@ const useStyles = ({ hasError }: AppTextFieldStylesParams) => ({
     borderRadius: 20,
     color: 'basic.grey',
     pl: 2,
+    borderWidth: 3,
+    borderStyle: 'solid',
+    borderColor: 'transparent',
     input: {
       '&::placeholder': {
         color: 'basic.grey',
       },
     },
     '&.Mui-error': {
-      borderWidth: 3,
-      borderStyle: 'solid',
       borderColor: 'error.400',
     },
     '&.Mui-focused': {
-      borderWidth: 3,
-      borderStyle: 'solid',
       borderColor: hasError ? 'error.400' : 'primary.main',
     },
   },

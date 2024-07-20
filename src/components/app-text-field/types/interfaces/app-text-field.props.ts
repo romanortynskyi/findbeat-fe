@@ -13,6 +13,7 @@ interface AppTextFieldProps {
   value?: string
   placeholder?: string
   type?: string
+  startAdornment?: ReactNode
   endAdornment?: ReactNode
   hasError?: boolean
   errorMessage?: string

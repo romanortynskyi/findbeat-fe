@@ -8,9 +8,12 @@ const AppAutocomplete: FC<AppAutocompleteProps<unknown>> = <OptionType, >(props:
   const {
     name,
     placeholder,
+    inputValue,
     onInputChange,
     options,
     canHaveError,
+    startAdornment,
+    endAdornment,
   } = props
 
   const textFieldRef = useRef(null)
@@ -18,6 +21,7 @@ const AppAutocomplete: FC<AppAutocompleteProps<unknown>> = <OptionType, >(props:
   return (
     <Autocomplete
       options={options}
+      inputValue={inputValue}
       renderInput={(params: AutocompleteRenderInputParams) => (
         <AppTextField
           ref={textFieldRef}
@@ -25,6 +29,8 @@ const AppAutocomplete: FC<AppAutocompleteProps<unknown>> = <OptionType, >(props:
           onChange={onInputChange}
           canHaveError={canHaveError}
           placeholder={placeholder}
+          startAdornment={startAdornment}
+          endAdornment={endAdornment}
           {...params}
         />
       )}
