@@ -4,6 +4,7 @@ const styles = {
     height,
     src,
     isClickable,
+    hasBorder,
   }: AppAvatarStylesAvatarParams) => ({
     width,
     height,
@@ -12,6 +13,7 @@ const styles = {
       padding: src ? 0 : '10px',
     },
     cursor: isClickable ? 'pointer' : 'auto',
+    border: hasBorder ? '3px solid #333436' : 'none',
   }),
 }
 

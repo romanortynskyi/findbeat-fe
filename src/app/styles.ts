@@ -2,6 +2,10 @@ const styles = {
   headerContainer: {
     backgroundColor: 'backgroundColor',
     maxWidth: '1500px !important',
+    mb: 5,
+  },
+  container: {
+    maxWidth: '1500px !important',
   },
   userContainer: {
     backgroundColor: 'basic.white',

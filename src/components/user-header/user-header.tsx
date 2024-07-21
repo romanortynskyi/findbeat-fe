@@ -70,11 +70,11 @@ const UserHeader: FC<UserHeaderProps> = (props) => {
           />
 
           <Box sx={styles.profileMenuContainer}>
-            <Typography>
+            <Typography sx={styles.fullName}>
               {fullName}
             </Typography>
 
-            <KeyboardArrowDownIcon />
+            <KeyboardArrowDownIcon sx={styles.keyboardArrowDownIcon} />
           </Box>
         </Box>
       </Box>

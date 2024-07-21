@@ -26,6 +26,12 @@ const styles = {
     mr: 1,
     cursor: 'pointer',
   },
+  fullName: {
+    color: 'basic.white',
+  },
+  keyboardArrowDownIcon: {
+    color: 'basic.white',
+  },
 }
 
 export default styles

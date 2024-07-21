@@ -3,4 +3,5 @@ interface AppAvatarProps {
   height: number
   isClickable: boolean
   src?: string
+  hasBorder?: boolean
 }

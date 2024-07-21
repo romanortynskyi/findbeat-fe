@@ -7,8 +7,10 @@ import Header from '@/containers/header'
 import UserModel from '@/types/interfaces/models/user.model'
 import { authOptions } from './api/auth/[...nextauth]/route'
 
-import styles from './styles'
 import Role from '@/types/enums/role.enum'
+import BriefUserDetails from '@/components/brief-user-details'
+
+import styles from './styles'
 
 const Index = async () => {
   const session = await getServerSession(authOptions)
@@ -20,6 +22,8 @@ const Index = async () => {
     lastName: session?.user?.lastName ?? '',
     role: session?.user?.role ?? Role.User,
     token: session?.user?.token ?? '',
+    username: session?.user?.username ?? '',
+    image: session?.user?.image || null,
     createdAt: new Date(session?.user?.createdAt ?? ''),
     updatedAt: new Date(session?.user?.updatedAt ?? ''),
   }
@@ -29,6 +33,19 @@ const Index = async () => {
       <main>
         <Container sx={styles.headerContainer}>
           <Header user={user} />
+        </Container>
+        <Container sx={styles.container}>
+          <aside>
+            <BriefUserDetails
+              imgSrc={user.image?.src}
+              firstName={user.firstName}
+              lastName={user.lastName}
+              username={user.username}
+              postsCount={0}
+              followingCount={0}
+              followersCount={0}
+            />
+          </aside>
         </Container>
       </main>
     )

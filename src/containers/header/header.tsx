@@ -15,7 +15,7 @@ const Header: FC<HeaderProps> = (props) => {
 
   const isSignInPage = pathname === Path.SignIn
 
-  if (user) {
+  if (user && user.id > 0) {
     return <UserHeader user={user} />
   }
 

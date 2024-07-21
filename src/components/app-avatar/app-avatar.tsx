@@ -9,6 +9,7 @@ const AppAvatar: FC<AppAvatarProps> = (props) => {
     height,
     src,
     isClickable,
+    hasBorder = false,
   } = props
 
   return (
@@ -18,6 +19,7 @@ const AppAvatar: FC<AppAvatarProps> = (props) => {
         height,
         src,
         isClickable,
+        hasBorder,
       })}
       src={src ?? '/user-fallback-image.png'}
     />

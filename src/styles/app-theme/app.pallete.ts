@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { green } from '@mui/material/colors'
+import { yellow } from '@mui/material/colors'
 
 const palette = {
   primary: {
@@ -44,7 +44,7 @@ const palette = {
     900: '#1E5F23',
   },
   text: {
-    primary: green[50],
+    primary: '#333436',
   },
 }
 
