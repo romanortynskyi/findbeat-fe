@@ -6,6 +6,9 @@ import { ThemeProvider } from '@mui/system'
 import { CssBaseline } from '@mui/material'
 
 import { theme } from '@/styles/app-theme/custom-mui.styles'
+import Sidebar from '@/containers/sidebar'
+import getCurrentUser from '@/utils/get-current-user'
+import Header from '@/containers/header'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,6 +23,8 @@ const RootLayout = async ({
   const locale = await getLocale()
   const messages = await getMessages()
 
+  const user = await getCurrentUser()
+
   return (
     <html lang={locale}>
       <body>
@@ -27,7 +32,11 @@ const RootLayout = async ({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <NextIntlClientProvider messages={messages}>
-              {children}
+              <Header user={user} />
+              
+              <Sidebar user={user}>
+                {children}
+              </Sidebar>
             </NextIntlClientProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

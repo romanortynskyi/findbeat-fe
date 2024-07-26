@@ -2,6 +2,7 @@
 
 import { FC } from 'react'
 import { usePathname } from 'next/navigation'
+import Box from '@mui/material/Box'
 
 import GuestHeader from '@/components/guest-header'
 import Path from '@/types/enums/path.enum'
@@ -15,11 +16,13 @@ const Header: FC<HeaderProps> = (props) => {
 
   const isSignInPage = pathname === Path.SignIn
 
-  if (user && user.id > 0) {
-    return <UserHeader user={user} />
-  }
+  const contentJSX = user ? <UserHeader user={user} /> : <GuestHeader shouldHaveSignInLink={!isSignInPage} />
 
-  return <GuestHeader shouldHaveSignInLink={!isSignInPage} />
+  return (
+    <Box>
+      {contentJSX}
+    </Box>
+  )
 }
 
 export default Header

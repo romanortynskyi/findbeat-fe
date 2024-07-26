@@ -1,52 +1,19 @@
-import { getServerSession } from 'next-auth/next'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 
 import Intro from '@/components/intro/intro'
 import Header from '@/containers/header'
-import UserModel from '@/types/interfaces/models/user.model'
-import { authOptions } from './api/auth/[...nextauth]/route'
-
-import Role from '@/types/enums/role.enum'
-import BriefUserDetails from '@/components/brief-user-details'
+import getCurrentUser from '@/utils/get-current-user'
 
 import styles from './styles'
 
 const Index = async () => {
-  const session = await getServerSession(authOptions)
-
-  const user: UserModel = {
-    id: session?.user.id ?? -1,
-    email: session?.user?.email ?? '',
-    firstName: session?.user?.firstName ?? '',
-    lastName: session?.user?.lastName ?? '',
-    role: session?.user?.role ?? Role.User,
-    token: session?.user?.token ?? '',
-    username: session?.user?.username ?? '',
-    image: session?.user?.image || null,
-    createdAt: new Date(session?.user?.createdAt ?? ''),
-    updatedAt: new Date(session?.user?.updatedAt ?? ''),
-  }
-
-  if (user.id > 0) {
+  const user = await getCurrentUser()
+  
+  if (user) {
     return (
       <main>
-        <Container sx={styles.headerContainer}>
-          <Header user={user} />
-        </Container>
-        <Container sx={styles.container}>
-          <aside>
-            <BriefUserDetails
-              imgSrc={user.image?.src}
-              firstName={user.firstName}
-              lastName={user.lastName}
-              username={user.username}
-              postsCount={0}
-              followingCount={0}
-              followersCount={0}
-            />
-          </aside>
-        </Container>
+        
       </main>
     )
   }
@@ -55,10 +22,6 @@ const Index = async () => {
     <>
       <main>
         <Box sx={styles.guestContainer}>
-          <Container sx={styles.headerContainer}>
-            <Header user={user} />
-          </Container>
-
           <Intro />
         </Box>
       </main>
