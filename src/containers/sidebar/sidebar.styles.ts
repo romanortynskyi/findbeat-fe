@@ -5,7 +5,7 @@ const styles = {
     padding: '0 20px',
     position: 'sticky',
   },
-  briefUserDetailsContainer: {
+  userCardContainer: {
     mb: 4,
   },
 }

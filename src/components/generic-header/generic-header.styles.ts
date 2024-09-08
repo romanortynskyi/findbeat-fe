@@ -4,7 +4,6 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'basic.black',
     padding: '0 20px',
   },
 }

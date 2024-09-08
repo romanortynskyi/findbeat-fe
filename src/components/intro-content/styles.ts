@@ -1,6 +1,7 @@
 const styles = {
   container: {
     position: 'relative',
+    height: 'calc(100% - 100px)',
   },
   title: {
     position: 'absolute',
@@ -45,6 +46,9 @@ const styles = {
     width: 30,
     height: 30,
     color: 'basic.black',
+  },
+  whiteText: {
+    color: 'basic.white',
   },
 }
 

@@ -12,7 +12,7 @@ import { Chat } from '@mui/icons-material'
 
 const IntroContent = () => {
   return (
-    <Box sx={{ height: 'calc(100% - 100px)' }}>
+    <Box sx={styles.container}>
       <Image
         src='/intro.png'
         alt='intro'
@@ -26,20 +26,20 @@ const IntroContent = () => {
       />
 
       <Typography
-        sx={styles.title}
+        sx={{ ...styles.title, ...styles.whiteText }}
         variant='h1'
       >
         Lorem ipsum
       </Typography>
       <Typography
-        sx={styles.subtitle}
+        sx={{ ...styles.subtitle, ...styles.whiteText }}
         variant='subtitle1'
       >
         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
       </Typography>
 
       <Box sx={styles.joinContainer}>
-        <Typography variant='subtitle1' sx={styles.newToFindbeat}>
+        <Typography variant='subtitle1' sx={{ ...styles.newToFindbeat, ...styles.whiteText }}>
           New to FINDBEAT?
         </Typography>
 
@@ -49,7 +49,7 @@ const IntroContent = () => {
       </Box>
 
       <Box sx={styles.bottomContainer}>
-        <Typography variant='subtitle1'>
+        <Typography variant='subtitle1' sx={styles.whiteText}>
           1,903,234 musicians have found their collaborators here!
         </Typography>
 

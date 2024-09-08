@@ -1,11 +1,8 @@
 interface BriefUserDetailsProps {
-  firstName: string
-  lastName: string
-  username: string
-  postsCount: number
-  followersCount: number
-  followingCount: number
+  title: string
+  subtitle: string
   imgSrc?: string
+  textAfterName?: string
 }
 
 export default BriefUserDetailsProps

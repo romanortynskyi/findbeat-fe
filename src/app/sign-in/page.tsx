@@ -56,6 +56,7 @@ const SignIn = () => {
           width: '100%',
           objectFit: 'cover',
           transform: 'translateX(-30%)',
+          position: 'absolute',
         }}
         width={window.innerWidth}
         height={window.innerHeight}

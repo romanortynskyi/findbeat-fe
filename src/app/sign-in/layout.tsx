@@ -35,13 +35,7 @@ const RootLayout = async ({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <NextIntlClientProvider messages={messages}>
-              <Box sx={styles.headerContainer}>
-                <Header user={user} />
-              </Box>
-              
-              <Sidebar user={user}>
-                {children}
-              </Sidebar>
+              {children}
             </NextIntlClientProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
