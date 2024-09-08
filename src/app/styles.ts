@@ -1,16 +1,21 @@
+interface HeaderContainerStyleParams {
+  isAbsolute: boolean
+  backgroundColor: string
+}
+
 const styles = {
-  headerContainer: {
-    backgroundColor: 'transparent',
+  headerContainer: (headerContainerStyleParams: HeaderContainerStyleParams) => ({
+    backgroundColor: headerContainerStyleParams.backgroundColor,
     maxWidth: '1500px !important',
-    position: 'absolute',
+    position: headerContainerStyleParams.isAbsolute ? 'absolute' : 'relative',
     zIndex: 2,
     width: '100%',
-  },
-  container: {
+  }),
+  container: (backgroundColor: string) => ({
     maxWidth: '1500px !important',
-    backgroundColor: 'backgroundColor',
+    backgroundColor,
     height: '100vh',
-  },
+  }),
   userContainer: {
     backgroundColor: 'basic.white',
     height: '100vh',

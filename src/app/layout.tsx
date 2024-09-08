@@ -28,6 +28,15 @@ const RootLayout = async ({
 
   const user = await getCurrentUser()
 
+  const containerStyle = user ? styles.container('basic.white') : styles.container('backgroundColor')
+  const headerContainerStyle = user ? styles.headerContainer({
+    isAbsolute: false,
+    backgroundColor: 'backgroundColor',
+  }) : styles.headerContainer({
+    isAbsolute: true,
+    backgroundColor: 'transparent',
+  })
+
   return (
     <html lang={locale}>
       <body>
@@ -35,8 +44,8 @@ const RootLayout = async ({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <NextIntlClientProvider messages={messages}>
-              <Box sx={styles.container}>
-                <Box sx={styles.headerContainer}>
+              <Box sx={containerStyle}>
+                <Box sx={headerContainerStyle}>
                   <Header user={user} />
                 </Box>
                 

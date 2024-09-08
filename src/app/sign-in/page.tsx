@@ -38,6 +38,7 @@ const SignIn = () => {
 
       else {
         router.replace('/')
+        router.refresh()
       }
     }
 
