@@ -1,7 +1,11 @@
 const styles = {
   container: {
     backgroundColor: 'backgroundColor',
-    position: 'relative',
+    position: 'absolute',
+    zIndex: 1,
+    top: 0,
+    left: 0,
+    width: '100%',
     height: '100vh',
   },
   headerContainer: {
