@@ -1,4 +1,8 @@
-import { FC } from 'react'
+import {
+  forwardRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
 
@@ -7,11 +11,13 @@ import GenericHeaderProps from './types/interfaces/generic-header.props'
 
 import styles from './generic-header.styles'
 
-const GuestHeader: FC<GenericHeaderProps> = (props) => {
+const GuestHeader: ForwardRefExoticComponent<
+  Omit<GenericHeaderProps, 'ref'> & RefAttributes<HTMLElement | null>
+> = forwardRef((props, ref) => {
   const { children } = props
 
   return (
-    <Box sx={styles.container}>
+    <Box sx={styles.container} ref={ref}>
       <Link
         style={{ color: '#FBFBFB', textDecoration: 'none' }}
         href='/'
@@ -22,5 +28,6 @@ const GuestHeader: FC<GenericHeaderProps> = (props) => {
       {children}
     </Box>
   )
-}
+})
+
 export default GuestHeader

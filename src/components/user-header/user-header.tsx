@@ -4,10 +4,13 @@ import {
   ChangeEventHandler,
   FC,
   useState,
+  useRef,
 } from 'react'
 import { useTranslations } from 'next-intl'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 import SearchIcon from '@mui/icons-material/Search'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import BookmarkIcon from '@mui/icons-material/Bookmark'
@@ -31,16 +34,30 @@ const UserHeader: FC<UserHeaderProps> = (props) => {
 
   const t = useTranslations('user-header')
 
+  const headerRef = useRef<HTMLElement | null>(null)
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const isMenuOpen = anchorEl !== null
+
   const [autocompleteInputValue, setAutocompleteInputValue] = useState('')
 
   const onAutocompleteInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     setAutocompleteInputValue(event.target.value)
   }
 
+  const onFullNameClick = () => {
+    setAnchorEl(headerRef.current)
+  }
+
+  const onMenuClose = () => {
+    setAnchorEl(null)
+  }
+
   const endAdornment = autocompleteInputValue.length > 0 ? <CloseIcon sx={styles.autocompleteEndAdornmentIcon} /> : null
 
   return (
-    <GenericHeader>
+    <GenericHeader ref={headerRef}>
       <Box sx={styles.container}>
         <AppAutocomplete
           name='autocomplete'
@@ -69,13 +86,25 @@ const UserHeader: FC<UserHeaderProps> = (props) => {
             isClickable={false}
           />
 
-          <Box sx={styles.profileMenuContainer}>
+          <Box sx={styles.profileMenuContainer} onClick={onFullNameClick}>
             <Typography sx={styles.fullName}>
               {fullName}
             </Typography>
 
             <KeyboardArrowDownIcon sx={styles.keyboardArrowDownIcon} />
           </Box>
+
+          <Menu
+            open={isMenuOpen}
+            anchorEl={anchorEl}
+            onClose={onMenuClose}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            autoFocus={false}
+          >
+            <MenuItem>hello</MenuItem>
+            <MenuItem>world</MenuItem>
+          </Menu>
         </Box>
       </Box>
     </GenericHeader>
