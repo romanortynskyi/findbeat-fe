@@ -9,11 +9,7 @@ import AppMenuProps from './types/interfaces/app-menu.props'
 import styles from './app-menu.styles'
 
 const AppMenu: FC<AppMenuProps> = (props) => {
-  const { selectedIndex } = props
-
-  const t = useTranslations()
-
-  const items = getAppMenuItems(t)
+  const { selectedIndex, items } = props
 
   const getItemStyle = (index: number) => {
     const isLast = index === items.length - 1

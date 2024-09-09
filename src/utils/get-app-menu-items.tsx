@@ -4,7 +4,7 @@ import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo'
 import ChatIcon from '@mui/icons-material/Chat'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import LanguageIcon from '@mui/icons-material/Language'
-import SettingsIcon from '@mui/icons-material/Settings'
+import AppMenuItem from '@/types/interfaces/common/app-menu-item'
 
 const styles = {
   icon: {
@@ -14,7 +14,7 @@ const styles = {
   },
 }
 
-const getAppMenuItems = (t: any) => [
+const getAppMenuItems = (t: any): AppMenuItem[] => [
   {
     href: '/',
     icon: <HomeIcon sx={styles.icon} />,

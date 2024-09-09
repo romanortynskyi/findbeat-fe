@@ -18,7 +18,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
 
   const pathname = usePathname()
 
-  const t = useTranslations()
+  const t = useTranslations('sidebar')
 
   const appMenuItems = getAppMenuItems(t)
 
@@ -51,7 +51,10 @@ const Sidebar: FC<SidebarProps> = (props) => {
           />
         </Box>
 
-        <AppMenu selectedIndex={selectedMenuItemIndex} />
+        <AppMenu
+          selectedIndex={selectedMenuItemIndex}
+          items={appMenuItems}
+        />
       </aside>
 
       {children}

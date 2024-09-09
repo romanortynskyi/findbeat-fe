@@ -2,7 +2,6 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 
 import Intro from '@/components/intro/intro'
-import Header from '@/containers/header'
 import getCurrentUser from '@/utils/get-current-user'
 
 import styles from './styles'

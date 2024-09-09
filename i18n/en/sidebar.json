@@ -1,0 +1,10 @@
+{
+  "sidebar": {
+    "home": "Home",
+    "explore": "Explore",
+    "videos": "Videos",
+    "chats": "Chats",
+    "create": "Create",
+    "connect": "Connect"
+  }
+}
