@@ -41,10 +41,6 @@ const SignUp = () => {
         height={window.innerHeight}
       />
 
-      <Container sx={styles.headerContainer}>
-        <Header shouldHaveSignInLink={false} />
-      </Container>
-      
       <Box sx={styles.formContainer}>
         <Typography variant='h3' sx={styles.title}>
           {t('join')}
