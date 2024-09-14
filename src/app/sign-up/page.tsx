@@ -1,18 +1,30 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
+import { FieldValues } from 'react-hook-form'
 
-import JoinForm from '@/components/forms/join-form'
+import SignUpCommandInput from '@/types/interfaces/command-inputs/auth/sign-up.command-input'
+import SignUpForm from '@/components/forms/sign-up-form'
 import Header from '@/components/guest-header'
+import useSignUpUseCase from '@/hooks/use-case-hooks/auth/use-sign-up-use-case'
 
 import styles from './styles'
+const SignUp = () => {
+  const t = useTranslations('signUp')
 
-const Join = () => {
-  const t = useTranslations('join')
+  const [serverErrorMessage, setServerErrorMessage] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  const signUpUseCase = useSignUpUseCase({ setServerErrorMessage, setIsLoading })
+
+  const onSubmit = async (values: FieldValues) => {
+    await signUpUseCase.execute(values as SignUpCommandInput)
+  }
 
   return (
     <Box sx={styles.container}>
@@ -38,10 +50,14 @@ const Join = () => {
           {t('join')}
         </Typography>
 
-        <JoinForm onSubmit={(data) => console.log(data)} />
+        <SignUpForm
+          onSubmit={onSubmit}
+          isLoading={isLoading}
+          serverErrorMessage={serverErrorMessage}
+        />
       </Box>
     </Box>
   )
 }
 
-export default Join
+export default SignUp

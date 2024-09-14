@@ -1,11 +1,11 @@
 import { SignInResponse } from 'next-auth/react'
 
 import Command from '@/commands/abstract/command'
-import SignInCommandInput from '@/types/interfaces/command-inputs/auth/sign-in.command-input'
 import AbstractAuthService from '@/services/abstract/abstract-auth.service'
 import AuthService from '@/services/implementations/auth.service'
+import SignUpCommandInput from '@/types/interfaces/command-inputs/auth/sign-up.command-input'
 
-class SignInCommand implements Command<SignInCommandInput, SignInResponse | undefined> {
+class SignUpCommand implements Command<SignUpCommandInput, SignInResponse | undefined> {
   result: SignInResponse | undefined
   authService: AbstractAuthService
 
@@ -13,11 +13,11 @@ class SignInCommand implements Command<SignInCommandInput, SignInResponse | unde
     this.authService = new AuthService()
   }
 
-  async execute(input: SignInCommandInput): Promise<void> {
-    const result = await this.authService.signIn(input)
+  async execute(input: SignUpCommandInput): Promise<void> {
+    const result = await this.authService.signUp(input)
 
     this.result = result
   }
 }
 
-export default SignInCommand
+export default SignUpCommand

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Button from '@mui/material/Button'
+import LoadingButton from '@mui/lab/LoadingButton'
 
 import PrimaryButtonProps from './primary-button.props'
 
@@ -9,19 +9,21 @@ const PrimaryButton: FC<PrimaryButtonProps> = (props) => {
     text,
     width,
     type,
+    isLoading,
   } = props
 
   return (
-    <Button
+    <LoadingButton
       variant='contained'
       onClick={onClick}
       sx={{
         width,
       }}
       type={type}
+      loading={isLoading}
     >
       {text}
-    </Button>
+    </LoadingButton>
   )
 }
 

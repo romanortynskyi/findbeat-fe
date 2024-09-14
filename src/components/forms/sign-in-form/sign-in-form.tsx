@@ -25,13 +25,21 @@ import SignInFormProps from './types/interfaces/sign-in-form.props'
 import styles from './sign-in-form.styles'
 
 const SignInForm: FC<SignInFormProps> = (props) => {
-  const { onSubmit, serverErrorMessage } = props
+  const {
+    onSubmit,
+    serverErrorMessage,
+    isLoading,
+  } = props
 
   const [isPasswordHidden, setIsPasswordHidden] = useState(true)
 
   const t = useTranslations('signIn')
 
-  const { handleSubmit, control, setError, getFieldState } = useForm()
+  const {
+    handleSubmit,
+    control,
+    setError,
+  } = useForm()
 
   useEffect(() => {
     if (serverErrorMessage) {
@@ -96,13 +104,14 @@ const SignInForm: FC<SignInFormProps> = (props) => {
             text={t('signIn')}
             width='100%'
             type='submit'
+            isLoading={isLoading}
           />
         </Box>
 
         <Box sx={styles.joinLinkContainer}>
           <Link
             style={{ color: '#FBFBFB', textDecoration: 'underline' }}
-            href='/join'
+            href='/sign-up'
           >
             {t('clickHereToJoin')}
           </Link>

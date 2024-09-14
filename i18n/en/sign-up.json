@@ -1,5 +1,5 @@
 {
-  "join": {
+  "signUp": {
     "join": "Join",
     "email": "Email",
     "password": "Password",
@@ -10,7 +10,8 @@
     "validationErrorMessages": {
       "email": {
         "required": "Please enter your email address",
-        "pattern": "Should be a valid email address"
+        "pattern": "Should be a valid email address",
+        "EMAIL_ALREADY_EXISTS": "A user with the specified email already exists"
       },
       "firstName": {
         "required": "Please enter your first name"

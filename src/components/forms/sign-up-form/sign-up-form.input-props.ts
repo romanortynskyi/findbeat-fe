@@ -1,6 +1,6 @@
-import JoinFormInputPropsPasswordParams from "./types/interfaces/join-form-input-props-password.params"
+import SignUpFormInputPropsPasswordParams from "./types/interfaces/sign-up-form-input-props-password.params"
 
-const joinFormInputProps = (t: any) => ({
+const signUpFormInputProps = (t: any) => ({
   email: {
     name: 'email',
     placeholder: t('email'),
@@ -13,7 +13,7 @@ const joinFormInputProps = (t: any) => ({
     name: 'lastName',
     placeholder: t('lastName'),
   },
-  password: ({ type, endAdornment }: JoinFormInputPropsPasswordParams) => ({
+  password: ({ type, endAdornment }: SignUpFormInputPropsPasswordParams) => ({
     name: 'password',
     placeholder: t('password'),
     type,
@@ -21,4 +21,4 @@ const joinFormInputProps = (t: any) => ({
   }),
 })
 
-export default joinFormInputProps
+export default signUpFormInputProps

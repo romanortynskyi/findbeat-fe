@@ -2,9 +2,9 @@ import { ReactNode } from 'react'
 
 import TextFieldType from '@/types/enums/text-field-type.enum'
 
-interface JoinFormInputPropsPasswordParams {
+interface SignUpFormInputPropsPasswordParams {
   type: TextFieldType,
   endAdornment: ReactNode
 }
 
-export default JoinFormInputPropsPasswordParams
+export default SignUpFormInputPropsPasswordParams

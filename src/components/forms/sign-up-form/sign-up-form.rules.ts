@@ -1,6 +1,6 @@
 import RegexPattern from '@/types/enums/regex-pattern.enum'
 
-const joinFormRules = {
+const signUpFormRules = {
   email: {
     required: true,
     pattern: new RegExp(RegexPattern.Email),
@@ -17,4 +17,4 @@ const joinFormRules = {
   },
 }
 
-export default joinFormRules
+export default signUpFormRules

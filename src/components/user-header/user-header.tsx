@@ -32,7 +32,7 @@ const UserHeader: FC<UserHeaderProps> = (props) => {
 
   const { onSignOut } = menuActions
 
-  const t = useTranslations('user-header')
+  const t = useTranslations('userHeader')
 
   const headerRef = useRef<HTMLElement | null>(null)
 

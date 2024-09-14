@@ -9,6 +9,7 @@ import styles from './styles'
 import Link from 'next/link'
 import PrimaryButton from '../primary-button'
 import { Chat } from '@mui/icons-material'
+import Path from '@/types/enums/path.enum'
 
 const IntroContent = () => {
   return (
@@ -43,8 +44,12 @@ const IntroContent = () => {
           New to FINDBEAT?
         </Typography>
 
-        <Link href='/join'>
-          <PrimaryButton text='Join' onClick={() => {}} />
+        <Link href={Path.SignUp}>
+          <PrimaryButton
+            text='Join'
+            isLoading={false}
+            onClick={() => {}}
+          />
         </Link>
       </Box>
 

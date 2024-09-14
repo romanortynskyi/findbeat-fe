@@ -14,7 +14,7 @@ const styles = {
     width: '100%',
     mb: 2,
   },
-  joinLinkContainer: {
+  signInLinkContainer: {
     mb: 2,
   },
   divider: {

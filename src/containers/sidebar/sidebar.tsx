@@ -28,7 +28,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
     return children
   }
 
-  if (pathname === Path.Join) {
+  if (pathname === Path.SignUp) {
     return children
   }
 

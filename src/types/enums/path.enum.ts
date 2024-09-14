@@ -1,7 +1,7 @@
 enum Path {
   Index = '/',
   SignIn = '/sign-in',
-  Join = '/join',
+  SignUp = '/sign-up',
 }
 
 export default Path

@@ -1,7 +1,10 @@
-const joinFormValidationErrors = (t: any) => ({
+import ServerErrorCode from '@/types/enums/server-error-code.enum'
+
+const signUpFormValidationErrors = (t: any) => ({
   email: {
     required: t('validationErrorMessages.email.required'),
     pattern: t('validationErrorMessages.email.pattern'),
+    [ServerErrorCode.EmailAlreadyExists]: t(`validationErrorMessages.email.${ServerErrorCode.EmailAlreadyExists}`),
   },
   firstName: {
     required: t('validationErrorMessages.firstName.required'),
@@ -15,4 +18,4 @@ const joinFormValidationErrors = (t: any) => ({
   },
 })
 
-export default joinFormValidationErrors
+export default signUpFormValidationErrors

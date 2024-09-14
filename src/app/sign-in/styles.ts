@@ -22,6 +22,7 @@ const styles = {
   },
   title: {
     textAlign: 'center',
+    color: 'basic.white',
   },
 }
 

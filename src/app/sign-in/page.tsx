@@ -17,8 +17,9 @@ const SignIn = () => {
   const t = useTranslations('signIn')
 
   const [serverErrorMessage, setServerErrorMessage] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const signInUseCase = useSignInUseCase({ setServerErrorMessage })
+  const signInUseCase = useSignInUseCase({ setServerErrorMessage, setIsLoading })
 
   const onSubmit = async (values: FieldValues) => {
     await signInUseCase.execute(values as SignInCommandInput)
@@ -45,7 +46,11 @@ const SignIn = () => {
           {t('signIn')}
         </Typography>
 
-        <SignInForm onSubmit={onSubmit} serverErrorMessage={serverErrorMessage} />
+        <SignInForm
+          onSubmit={onSubmit}
+          serverErrorMessage={serverErrorMessage}
+          isLoading={isLoading}
+        />
       </Box>
     </Box>
   )

@@ -10,10 +10,11 @@ const useSignInUseCase = (params: UseSignInUseCaseParams) => {
   const router = useRouter()
   const signInCommand = useMemo(() => new SignInCommand(), [])
 
-  const { setServerErrorMessage } = params
+  const { setServerErrorMessage, setIsLoading } = params
 
   const execute = async (input: SignInCommandInput) => {
     try {
+      setIsLoading(true)
       await signInCommand.execute(input)
 
       const { result } = signInCommand
@@ -35,6 +36,10 @@ const useSignInUseCase = (params: UseSignInUseCaseParams) => {
     catch (error) {
       console.log(error)
     } 
+    
+    finally {
+      setIsLoading(false)
+    }
   }
 
   return { execute }

@@ -6,7 +6,7 @@ export default getRequestConfig(async () => {
   const sidebarMessages = (await import(`../i18n/${locale}/sidebar.json`))
   const userHeaderMessages = (await import(`../i18n/${locale}/user-header.json`))
   const signInMessages = (await import(`../i18n/${locale}/sign-in.json`)).default
-  const joinMessages = (await import(`../i18n/${locale}/join.json`)).default
+  const signUpMessages = (await import(`../i18n/${locale}/sign-up.json`)).default
 
   return {
     locale,
@@ -14,7 +14,7 @@ export default getRequestConfig(async () => {
       ...sidebarMessages,
       ...userHeaderMessages,
       ...signInMessages,
-      ...joinMessages,
+      ...signUpMessages,
     },
   }
 })

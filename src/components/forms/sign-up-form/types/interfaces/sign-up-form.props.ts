@@ -1,9 +1,9 @@
 import { FieldValues, SubmitHandler } from 'react-hook-form'
 
-interface SignInFormProps {
-  serverErrorMessage: string | null
+interface SignUpFormProps {
   isLoading: boolean
+  serverErrorMessage: string | null
   onSubmit: SubmitHandler<FieldValues>
 }
 
-export default SignInFormProps
+export default SignUpFormProps

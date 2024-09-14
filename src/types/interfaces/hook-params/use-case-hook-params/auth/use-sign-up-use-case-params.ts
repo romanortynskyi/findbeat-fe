@@ -1,8 +1,8 @@
 import { SetStateAction } from 'react'
 
-interface UseSignInUseCaseParams {
+interface UseSignUpUseCaseParams {
   setServerErrorMessage: (value: SetStateAction<string | null>) => void
   setIsLoading: (value: SetStateAction<boolean>) => void
 }
 
-export default UseSignInUseCaseParams
+export default UseSignUpUseCaseParams
